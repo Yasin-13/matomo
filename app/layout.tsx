@@ -27,9 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>{metadata.title}</title>
-        <meta name="description" content={metadata.description} />
-        {/* Matomo Tracking Code */}
+       
         <script
           dangerouslySetInnerHTML={{
             __html: `
