@@ -20,13 +20,13 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children, // Ensure the children prop is handled
+  children,
 }: {
-  children: React.ReactNode; // Define the type of children prop
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      <head> {/* Use standard <head> element here */}
+      <head>
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
         {/* Matomo Tracking Code */}
@@ -52,7 +52,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children} {/* Render the children */}
+        {children}
       </body>
     </html>
   );
