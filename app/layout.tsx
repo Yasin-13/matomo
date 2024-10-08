@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Head from "next/head"; // Import Head from next/head
+import React from "react"; // Import React for type definitions
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -20,21 +21,19 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+  children, // Ensure children prop is defined here
+}: {
+  children: React.ReactNode; // Define the type of children
+}) {
   return (
     <html lang="en">
       <Head>
-        {/* Other head elements like title, meta tags, etc. */}
+        {/* Add any other meta tags or head elements here */}
       </Head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
-      </body>
-      <Head>
+        {children} {/* Render the children here */}
         {/* Matomo Tracking Code */}
         <script
           dangerouslySetInnerHTML={{
@@ -54,7 +53,7 @@ export default function RootLayout({
           }}
         />
         {/* End Matomo Code */}
-      </Head>
+      </body>
     </html>
   );
 }
