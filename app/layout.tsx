@@ -27,6 +27,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
+        {/* Other head elements like title, meta tags, etc. */}
+      </Head>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        {children}
+      </body>
+      <Head>
         {/* Matomo Tracking Code */}
         <script
           dangerouslySetInnerHTML={{
@@ -47,11 +55,6 @@ export default function RootLayout({
         />
         {/* End Matomo Code */}
       </Head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
     </html>
   );
 }
